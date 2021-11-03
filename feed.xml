@@ -3,10 +3,31 @@
     <title>zcbm-blog</title>
     <link href="https://zcbm009.github.io/feed.xml" rel="self" />
     <link href="https://zcbm009.github.io" />
-    <updated>1970-01-01T08:00:00+08:00</updated>
+    <updated>2021-11-03T18:53:17+08:00</updated>
     <author>
         <name>zcbm</name>
     </author>
     <id>https://zcbm009.github.io</id>
 
+    <entry>
+        <title>添加内容测试</title>
+        <author>
+            <name>zcbm</name>
+        </author>
+        <link href="https://zcbm009.github.io/tian-jia-nei-rong-ce-shi.html"/>
+        <id>https://zcbm009.github.io/tian-jia-nei-rong-ce-shi.html</id>
+
+        <updated>2021-11-03T18:53:17+08:00</updated>
+            <summary>
+                <![CDATA[
+                    测试内容 
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>测试内容</p>
+
+            ]]>
+        </content>
+    </entry>
 </feed>
