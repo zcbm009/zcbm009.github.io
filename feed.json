@@ -10,6 +10,39 @@
     },
     "items": [
         {
+            "id": "https://zcbm009.github.io/pi-chu-li-wen-jian-yi.html",
+            "url": "https://zcbm009.github.io/pi-chu-li-wen-jian-yi.html",
+            "title": "批处理文件一",
+            "summary": "资源 https://www.bilibili.com/video/BV1Qv411q7bN?from=search&amp;seid=12643791154659857555 P1P5 P33 P3639 1、编写脚本 @echo off：在DOS窗口中不输出盘符； echo &quot;hello world&quot;：输出字符串，如果没有上一条语句则会显示盘符； pause：暂停窗口等待输入 2、命令的分类 3、用途 匹配规则删除文件；新建文件、日志等；批量创建计算机病毒 4、批处理文件的创建 1、命令模式 set /a 1+3 # /a代表算术运算，但是只能操作一次 2、文本模式&hellip;",
+            "content_html": "<h3 id=\"资源\">资源</h3>\n<p><a href=\"https://www.bilibili.com/video/BV1Qv411q7bN?from=search&amp;seid=12643791154659857555\">https://www.bilibili.com/video/BV1Qv411q7bN?from=search&amp;seid=12643791154659857555</a></p>\n<p>P1<del>P5  P33  P36</del>39</p>\n<h3 id=\"资源内容\">资源内容</h3>\n<h4 id=\"p1-批处理初体验\">P1 批处理初体验</h4>\n<p><strong>1、编写脚本</strong></p>\n<p><code>@echo off</code>：在DOS窗口中不输出盘符；</p>\n<p><code>echo &quot;hello world&quot;</code>：输出字符串，如果没有上一条语句则会显示盘符；</p>\n<p><code>pause</code>：暂停窗口等待输入</p>\n<p><strong>2、命令的分类</strong></p>\n<ul>\n<li>内部命令，如<code>cls</code>、<code>ipconfig</code></li>\n<li>外部命令，如java python等</li>\n</ul>\n<p><strong>3、用途</strong></p>\n<p>匹配规则删除文件；新建文件、日志等；批量创建计算机病毒</p>\n<p><strong>4、批处理文件的创建</strong></p>\n<h4 id=\"p2-算术运算\">P2 算术运算</h4>\n<p><strong>1、命令模式</strong></p>\n<p><code>set /a 1+3 # /a代表算术运算，但是只能操作一次</code></p>\n<p><strong>2、文本模式</strong></p>\n<p><code>set /a var=1+3</code> <code>echo %var%</code></p>\n<p><strong>3、分组优先级修改（使用括号）</strong></p>\n<h4 id=\"p3-重定向操作\">P3 重定向操作</h4>\n<p><strong>1、什么是重定向运算</strong></p>\n<p>当前命令的运行结果移交到下一个命令，或者是添加到文件中</p>\n<p><strong>2、命令使用</strong></p>\n<p><code>&gt;</code> <code>&gt;&gt;</code> <code>&lt;</code> <code>&lt;&lt;</code> 这些内容同linux；type命令查看文本内容；</p>\n<p><code>echo &quot;hello world&quot; &gt; a.txt</code> <code>type a.txt</code></p>\n<p><code>&lt;</code> <code>&gt;</code>还可以用于关系运算</p>\n<h4 id=\"p4-多命令运算\">P4 多命令运算</h4>\n<p>**1、&amp;&amp;**：执行完第一个命令后执行第二个命令，具有短路特性，如果第一个命令没有执行成功则第二个不会执行</p>\n<p>**2、||**：无论第一个命令是否成功，都会执行第二个命令，具有短路特性，如果第一个命令执行成功则第二个命令不会执行</p>\n<p>这两个命令并非与<code>linux</code>中的管道命令对应</p>\n<h4 id=\"p5-管道符号\">P5 管道符号</h4>\n<p><code>|</code>：第一个命令的输出作为第二命令的输入，如<code>netstat -ano | findstr :8080</code></p>\n<h4 id=\"p33-if-else\">P33 if-else</h4>\n<pre><code class=\"language-bat\">@echo off\nrem &quot;if-else内容输出&quot;\nset v=hello\nif %v%==hello (echo yes) else (echo no)\nrem &quot;取消&#39;请按任意键继续&#39;文本提示&quot;\npause&gt;nil\n</code></pre>\n<h4 id=\"p36-循环遍历文件夹名称\">P36 循环遍历文件夹名称</h4>\n<pre><code class=\"language-bat\">@echo off\nrem &quot;for test&quot;\nrem &quot;/d代表遍历文件夹，*代表当下目录下的所有文件，%%a代表将文件夹的名称赋值给变量a，如果是在控制台中输出变量则只需要一个%，两个%在批处理文件中是为了转义&quot;\nfor /d %%a in (*) do echo %a%\npause&gt;nil\n</code></pre>\n<h4 id=\"p37-遍历目录与子目录下的文件\">P37 遍历目录与子目录下的文件</h4>\n<pre><code class=\"language-bat\">@echo off\nrem &quot;/r代表搜索目标文件及其子目录下的文件，其后跟目标目录，%%v代表将目标内容赋值给变量v，()内内容代表目录下子文件的匹配规则，这里代表的是遍历cch目录下及其子目录下所有的java文件，将文件名称赋值给变量v&quot;\nfor /r &quot;C:\\Users\\Administrator\\Desktop\\cch&quot; %%v in (*.java) do echo %v%\npause&gt;nil\n</code></pre>\n<h4 id=\"p38-遍历数字操作\">P38 遍历数字操作</h4>\n<pre><code class=\"language-bat\">@echo off\nrem &quot;for /L %%v in (start,step,end)，/L不区分大小写，但是小写L容易造成歧义，降低可读性&quot;\nfor /L %%v in (1,2,10) do echo %v%\npause&gt;nil\n</code></pre>\n<h4 id=\"p39-遍历文件内容\">P39 遍历文件内容</h4>\n<pre><code class=\"language-bat\">@echo off\nrem &quot;使用/F，()内为匹配的目标文件，不需要加引号操作&quot;\nfor /F %%v in (C:\\Users\\Administrator\\Desktop\\cch\\Solution.java) do echo %v%\npause&gt;nil\n</code></pre>\n",
+            "author": {
+                "name": "zcbm"
+            },
+            "tags": [
+                   "Windows",
+                   "SelfCheckQuestion"
+            ],
+            "date_published": "2021-12-02T18:33:07+08:00",
+            "date_modified": "2021-12-02T18:33:30+08:00"
+        },
+        {
+            "id": "https://zcbm009.github.io/docker-jing-xiang-yu-rong-qi-cao-zuo-fu-xi-yi.html",
+            "url": "https://zcbm009.github.io/docker-jing-xiang-yu-rong-qi-cao-zuo-fu-xi-yi.html",
+            "title": "DOCKER--镜像与容器操作--复习一",
+            "summary": "基础概念 容器化技术 Docker是容器技术中的佼佼者。 虚拟化可以通过硬件模拟来实现，也可以通过操作系统软件来实现，而容器技术则利用操作系统本身的机制与特性，实现远超传统虚拟化的轻量级虚拟化。 虚拟化（virtualization）技术是一个通用的概念，在不同领域有不同的理解。在计算领域，一般指的是计算虚拟化（computing virtualization），或通常说的服务器虚拟化。 虚拟化的核心是对资源的抽象，目标往往是为了在同一个主机上同时运行多个系统或应用，从而提高系统资源的利用率，并且带来降低成本、方便管理和容错容灾等好处。 从大类上分，虚拟化技术可分为基于硬件的虚拟化和基于软件的虚拟化； 基于软件的虚拟化从对象所在的层次，又可以分为应用虚拟化和平台虚拟化（完全虚拟化、硬件辅助虚拟化、部分虚拟化、超虚拟化、操作系统虚拟化–Docker就是属于这类，操作系统虚拟化最大的特点就是不需要额外的supervisor支持）。 传统方式是在硬件层面实现虚拟化，需要有额外的虚拟机管理应用和虚拟机操作系统层（这里有个传统虚拟化与Docker虚拟化的对比图）。Docker容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，因此更加轻量级。 容器化技术与虚拟化技术之间就像这样一个关系：中国与其他国家在中国创建的大使馆（虚拟化技术），中国与内蒙古自治区、香港澳门台湾一国两制（容器化技术）。 基于Go语言实现的开源容器项目； 诞生于2013年年初，发起者是dotCloud公司，拥有众多相关开源组件项目，逐渐生成了围绕Docker容器的完整生态体系，2013年改名为DockerInc，并专注于Docker相关技术与产品的开发，目前已经成为全球最大的Docker容器服务提供商，官方网站为docker.com。 Docker项目代码开源在Github上，遵循Apache 2.0协议。 Docker的构想是要实现“Build, Ship and Run Any App, Anywhere”，即通过对应用的封装（Packaging）、分发（Distribution）、部署（Deployment）、运行（Runtime）生命周期进行管理，达到应用组件级别的“一次封装，到处运行”。这里的应用组件，既可以是一个Web应用、一个编译环境，也可以是一套数据库平台服务，甚至是一个操作系统或集群。 Linux容器（Linux&hellip;",
+            "content_html": "<h3 id=\"基础概念\">基础概念</h3>\n<h4 id=\"容器化技术\">容器化技术</h4>\n<hr>\n<p>Docker是容器技术中的佼佼者。</p>\n<hr>\n<h4 id=\"虚拟化技术\">虚拟化技术</h4>\n<hr>\n<h5 id=\"虚拟化与容器技术之间的区别\">虚拟化与容器技术之间的区别</h5>\n<p>虚拟化可以通过硬件模拟来实现，也可以通过操作系统软件来实现，而容器技术则利用操作系统本身的机制与特性，实现远超传统虚拟化的轻量级虚拟化。</p>\n<h5 id=\"什么是虚拟化技术\">什么是虚拟化技术</h5>\n<p>虚拟化（virtualization）技术是一个通用的概念，在不同领域有不同的理解。在计算领域，一般指的是计算虚拟化（computing virtualization），或通常说的服务器虚拟化。</p>\n<p>虚拟化的核心是对资源的抽象，目标往往是为了在同一个主机上同时运行多个系统或应用，从而提高系统资源的利用率，并且带来降低成本、方便管理和容错容灾等好处。</p>\n<h5 id=\"虚拟化技术的分类\">虚拟化技术的分类</h5>\n<p>从大类上分，虚拟化技术可分为基于硬件的虚拟化和基于软件的虚拟化；</p>\n<p>基于软件的虚拟化从对象所在的层次，又可以分为应用虚拟化和平台虚拟化（完全虚拟化、硬件辅助虚拟化、部分虚拟化、超虚拟化、操作系统虚拟化–Docker就是属于这类，操作系统虚拟化最大的特点就是不需要额外的supervisor支持）。</p>\n<p>传统方式是在硬件层面实现虚拟化，需要有额外的虚拟机管理应用和虚拟机操作系统层（这里有个传统虚拟化与Docker虚拟化的对比图）。Docker容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，因此更加轻量级。</p>\n<h5 id=\"自评\">自评</h5>\n<p>容器化技术与虚拟化技术之间就像这样一个关系：中国与其他国家在中国创建的大使馆（虚拟化技术），中国与内蒙古自治区、香港澳门台湾一国两制（容器化技术）。</p>\n<hr>\n<h4 id=\"docker的发展历史\">Docker的发展历史</h4>\n<hr>\n<p>基于Go语言实现的开源容器项目；</p>\n<h5 id=\"开发商的发展\">开发商的发展</h5>\n<p>诞生于2013年年初，发起者是<code>dotCloud</code>公司，拥有众多相关开源组件项目，逐渐生成了围绕Docker容器的完整生态体系，2013年改名为<code>DockerInc</code>，并专注于Docker相关技术与产品的开发，目前已经成为全球最大的Docker容器服务提供商，官方网站为docker.com。</p>\n<p>Docker项目代码开源在<code>Github</code>上，遵循Apache 2.0协议。</p>\n<h5 id=\"docker理念\">Docker理念</h5>\n<p>Docker的构想是要实现“Build, Ship and Run Any App, Anywhere”，即通过对应用的封装（Packaging）、分发（Distribution）、部署（Deployment）、运行（Runtime）生命周期进行管理，达到应用组件级别的“一次封装，到处运行”。这里的应用组件，既可以是一个Web应用、一个编译环境，也可以是一套数据库平台服务，甚至是一个操作系统或集群。</p>\n<h5 id=\"支撑技术的发展\">支撑技术的发展</h5>\n<p>Linux容器（Linux Containers, LXC）技术。IBM <code>DeveloperWorks</code>网站关于容器技术的描述十分准确：“容器有效地将由单个操作系统管理的资源划分到孤立的组中，以更好地在孤立的组之间平衡有冲突的资源使用需求。与虚拟化相比，这样既不需要指令级模拟，也不需要即时编译。容器可以在核心CPU本地运行指令，而不需要任何专门的解释机制。此外，也避免了准虚拟化（para-virtualization）和系统调用替换中的复杂性。”（从小圈子使用到成为Linux系统轻量级容器技术的事实标准。）</p>\n<p>在LXC的基础上，Docker提供了各种容器管理工具，让用户无须关注底层操作，引入分层文件系统构建和高效的镜像机制，降低了迁移难度；自0.9版本开始，Docker开发了libcon-tainer项目作为更广泛的容器驱动实现，从而替<u>换掉了LXC的实现</u>。Docker还积极推动成立了runC标准项目，并贡献给开放容器联盟，试图让容器的支持不再局限于Linux操作系统，而是更安全、更开放、更具扩展性。</p>\n<hr>\n<h4 id=\"docker的三大内容\">Docker的三大内容</h4>\n<h5 id=\"docker的三大内容都是哪些，简单概括一下\">Docker的三大内容都是哪些，简单概括一下</h5>\n<p>三大内容有镜像、容器、仓库。</p>\n<p>镜像有几大点：静态只读、创建容器、可以包含操作系统及依赖于此的应用程序；</p>\n<p>容器有几大点：运行与隔离应用、容器之间可以通过网络互相访问；</p>\n<p>仓库有几大点：注册中心与Docker创建之间的关系、公有仓库与私有仓库；</p>\n<h5 id=\"镜像\">镜像</h5>\n<p><u>首先回答基本命令：镜像的增、删、改、查</u></p>\n<p><strong>常用命令一</strong></p>\n<p><u>添加</u>（获取）镜像的命令：docker pull imageName；</p>\n<p>镜像名称的组成：仓库名称+标签；</p>\n<p>镜像重名：同一个仓库中重名则根据版本号来区分，如果不同仓库则根据仓库ip地址来区分，不写标签会默认从DockerHub中获取最新版本的镜像；</p>\n<p><del>镜像的内容与组成：镜像由若干层组成，唯一id</del></p>\n<p>公有仓库与私有仓库：前者是DockerHub提供的仓库，另外还可以在当前局域网中创建自己的Docker仓库，这点类似于Github。</p>\n<p><strong>常用命令二</strong></p>\n<p><strong>查</strong>看已有的镜像的基本信息：docker images/docker image ls;</p>\n<p>可以查看的基本信息有：name tag size image-id created;</p>\n<p>查看帮助文件：man docker-images;</p>\n<p><strong>常用命令三</strong></p>\n<p>为镜像添加别名：docker tag oldName newName，添加别名结果可从docker images 查看；</p>\n<p><em>这个命令类似windows的桌面快捷方式，linux的link文件，git的提交内容版本标签</em></p>\n<p><strong>常用命令四</strong></p>\n<p>查看一个镜像的详细信息：docker inspect imageName；</p>\n<p>查看一个镜像历史信息：docker history imageName；</p>\n<p><strong>常用命令五</strong></p>\n<p>从仓库中<u>搜索</u>镜像：docker search imageName；</p>\n<p><strong>常用命令六</strong></p>\n<p><u>删除</u>镜像：docker rmi id/tag–如果是镜像id则会先删除镜像相关的标签，然后再删除镜像，如果是标签的话则就会直接删除标签，镜像不会产生影响；</p>\n<p><em>在删除镜像前，会先查看是否存在与镜像对应的容器，如果存在可以使用-f关键字强制删除镜像，否则就只能删除容器后再执行镜像删除操作</em></p>\n<p>删除临时镜像的遗留文件：docker prune；</p>\n<p><strong>常用命令七</strong></p>\n<p>创建镜像的三种方法：基于（已有镜像的）容器创建、基于本地模板导入、基于Dockerfile创建。</p>\n<p><u><em>主要用途是基于当前环境创建镜像并进行环境迁移，以及上传镜像到仓库中</em></u></p>\n<h5 id=\"容器\">容器</h5>\n<p><em>需要掌握有容器的增、删、改、查相关命令</em></p>\n<p><strong>常用命令一</strong></p>\n<p>创建一个容器：<code>docker create imageName</code></p>\n<p>创建容器需要基于镜像；创建后的容器处于停止状态，需要运行其他命令来运行；</p>\n<p><strong>常用命令二</strong></p>\n<p>运行一个容器：<code>docker start container</code></p>\n<p>运行创建的容器</p>\n<p><strong>常用命令三</strong></p>\n<p>创建并运行一个容器：<code>docker run imageName</code></p>\n<p>添加参数<code>-d</code>则创建一个在后台运行的容器；</p>\n<p>如果命令存在可以输入窗口（如bash），则可以添加参数<code>-it</code>保持输入端打开并监听其输入内容；</p>\n<p>是前面两个命令的结合，其中有详细的过程，<u>以后需要将此过程详细的说明出来</u></p>\n<p><strong>常用命令四</strong></p>\n<p>查看正在运行的容器：<code>docker ls/ps</code></p>\n<p><strong>常用命令五</strong></p>\n<p>获取容器的输出信息：<code>docker logs</code></p>\n<p><strong>常用命令六</strong></p>\n<p>容器的暂停与开始：<code>docker pause/unpause container</code></p>\n<p>可以通过pause来暂停容器，处于停止状态的容器可以通过unpause来重新运行容器</p>\n<p><strong>常用命令七</strong></p>\n<p>容器的停止：<code>docker stop container</code></p>\n<p>容器停止的过程：先向容器发送一个SIGTERM信号，十秒后发送一个SINKILL信号，然后容器进入停止状态，也只可以使用<code>docker kill container</code>命令直接发送一个Kill信息给容器；</p>\n<p>容器进入停止状态的可能情况：容器正常运行结束，使用命令，使用ctrl+d或exit退出容器；</p>\n<p>容器处于停止状态时可以再使用start命令来重新运行；</p>\n<p><strong>常用命令八</strong></p>\n<p>删除处于停止状态的容器：<code>docker prune</code></p>\n<p><strong>常用命令九</strong></p>\n<p>重启容器：<code>docker restart container</code></p>\n<p>先使容器进入停止状态，再使重新启动容器</p>\n<p><strong>常用命令十</strong></p>\n<p>进入处于的容器：<code>docker attach container</code> <code>docker exec container</code></p>\n<p>前者可以维持一个输入窗口来与容器交互，但是多个窗口与容器的交互是相同的，所以当一个窗口处于阻塞状态时其他窗口也处于阻塞状态；后者则没有前面的问题，可以直接输入命令运行，可以使用（-it）运行一个伪终端与容器交互。</p>\n<p><strong>常用命令十一</strong></p>\n<p>删除一个容器：<code>docker rm container</code></p>\n<p>为了与镜像操作区分，使用了<code>rm</code>，而镜像使用了<code>rmi</code>，意为rm image；</p>\n<p>默认只能删除处于停止或者退出状态的容器，但是可以使用参数<code>-f</code>参数强制删除容器。</p>\n<p><strong>常用命令十二</strong></p>\n<p>查看容器信息：<code>docker inspect container</code> <code>docker top container</code> <code>docker stats container</code></p>\n<p>这些命令都与linux系统的部分命令类似</p>\n",
+            "author": {
+                "name": "zcbm"
+            },
+            "tags": [
+                   "SelfCheckQuestion",
+                   "Docker",
+                   "Book"
+            ],
+            "date_published": "2021-12-02T17:02:28+08:00",
+            "date_modified": "2021-12-02T17:02:28+08:00"
+        },
+        {
             "id": "https://zcbm009.github.io/zi-bei-yu-chao-yue-yi.html",
             "url": "https://zcbm009.github.io/zi-bei-yu-chao-yue-yi.html",
             "title": "自卑与超越一",
@@ -134,37 +167,6 @@
             ],
             "date_published": "2021-11-11T01:22:52+08:00",
             "date_modified": "2021-11-11T01:22:52+08:00"
-        },
-        {
-            "id": "https://zcbm009.github.io/ying-yu-dan-ci-san.html",
-            "url": "https://zcbm009.github.io/ying-yu-dan-ci-san.html",
-            "title": "英语单词三",
-            "summary": " 单词 意思 词性 应用 lotion setback carton restrain abbreviation lottery gossip reward deadlock maintain define harmony arrogant lucrative afford argue paradise plea&hellip;",
-            "content_html": "<table>\n<thead>\n<tr>\n<th>单词</th>\n<th>意思</th>\n<th>词性</th>\n<th>应用</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>lotion</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>setback</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>carton</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>restrain</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>abbreviation</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>lottery</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>gossip</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>reward</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>deadlock</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>maintain</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>define</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>harmony</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>arrogant</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>lucrative</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>afford</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>argue</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>paradise</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>plea</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>merely</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody></table>\n",
-            "author": {
-                "name": "zcbm"
-            },
-            "tags": [
-                   "English"
-            ],
-            "date_published": "2021-11-10T01:19:50+08:00",
-            "date_modified": "2021-11-10T01:19:50+08:00"
-        },
-        {
-            "id": "https://zcbm009.github.io/09-tui-hui-qi-dian.html",
-            "url": "https://zcbm009.github.io/09-tui-hui-qi-dian.html",
-            "title": "09-退回起点",
-            "summary": "今天都做了什么事 无意义以及没有提升或者意向变好的生活没有值得记录的意义。 八号与九号都陷入到了手机的无限地狱中。 算法没有做，画画没有画，程序也没有写，单词也没有背。而且这两天各吃了两顿外卖。 这两天果然明显降温了。即使在屋里也是手脚冰凉，是时候采购过冬的衣服了。 我们是多有钱。 1000分钟不进行任何娱乐活动。然而没有多大用处。 手机的存在！ 原神：12:00–15:30 直播：15:30–17:00 原神：18:00-24:00 算一下，今天用在手机上的时候整整有十二个小时，而自己却对这样的生活已经习以为常了。这样是绝对不行的啊！！！为什么，为什么学习不能像每天去刷牙一样自然，像打开手机去浏览一个个app一样自然？反而要一拖再拖，直到没有时间了呢？终究还是想太多了啊！去做就好，想着去做，如何做，以及解决其中出现的问题就好，整个学习过程与手机根本没有任何的关系！ ",
-            "content_html": "<h3 id=\"今天都做了什么事\">今天都做了什么事</h3>\n<p>无意义以及没有提升或者意向变好的生活没有值得记录的意义。</p>\n<p>八号与九号都陷入到了手机的无限地狱中。</p>\n<p>算法没有做，画画没有画，程序也没有写，单词也没有背。而且这两天各吃了两顿外卖。</p>\n<p>这两天果然明显降温了。即使在屋里也是手脚冰凉，是时候采购过冬的衣服了。</p>\n<h3 id=\"有没有什么比较在意的事情\">有没有什么比较在意的事情</h3>\n<p>我们是多有钱。</p>\n<p>1000分钟不进行任何娱乐活动。然而没有多大用处。</p>\n<h3 id=\"今天出现什么问题了吗？应该如何解决\">今天出现什么问题了吗？应该如何解决</h3>\n<p>手机的存在！</p>\n<h3 id=\"手机应用\">手机应用</h3>\n<p>原神：12:00–15:30</p>\n<p>直播：15:30–17:00</p>\n<p>原神：18:00-24:00</p>\n<h3 id=\"今天我的生活没有体现我任何的价值观念\">今天我的生活没有体现我任何的价值观念</h3>\n<p>算一下，今天用在手机上的时候整整有十二个小时，而自己却对这样的生活已经习以为常了。这样是绝对不行的啊！！！为什么，为什么学习不能像每天去刷牙一样自然，像打开手机去浏览一个个app一样自然？反而要一拖再拖，直到没有时间了呢？终究还是想太多了啊！去做就好，想着去做，如何做，以及解决其中出现的问题就好，整个学习过程与手机根本没有任何的关系！</p>\n",
-            "author": {
-                "name": "zcbm"
-            },
-            "tags": [
-                   "Diary",
-                   "2021-11"
-            ],
-            "date_published": "2021-11-10T01:00:24+08:00",
-            "date_modified": "2021-11-10T01:00:42+08:00"
         }
     ]
 }
